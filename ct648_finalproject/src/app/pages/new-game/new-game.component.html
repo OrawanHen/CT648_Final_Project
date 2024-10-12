@@ -1,0 +1,81 @@
+<div class="header">
+  <div class="text-content">
+      <p class="pclass">Create New Game From API 🐬</p>
+  </div>
+</div>
+<br/>
+<div class="login-box">
+  <div class="form">
+    <form class="login-form" (submit)="onSubmit($event, apiInput)">
+      <input type="text" placeholder="Input API" #apiInput />
+      <button 
+        type="submit" 
+        [class.disabled]="loading"
+        [disabled]="loading">
+        <span class="spinner-icon" [class.hidden]="!loading"></span>
+        Check
+      </button>
+
+    </form>
+  </div>
+  
+</div>
+
+<div class="containquestion ">
+  @for (ques of questionList ; track ques.question; let idx = $index){
+  <div class="card">
+    <p class="cookieHeading">{{ ques.question }}</p>
+    <div class="buttonContainer">
+      <button [class.chooseButton]="userAnswers[idx].answer == ques.answers?.[0]?.answer"
+        [class.firstButton]="userAnswers[idx].answer != ques.answers?.[0]?.answer"
+        [disabled]="userAnswers[idx].answer == ques.answers?.[0]?.answer"
+        (click)="checkAnswer(ques.answers?.[0]?.isCorrect , idx ,ques.answers?.[0]?.answer ?? '')">{{
+        ques.answers?.[0]?.answer
+        }}</button>
+      <button class="secondButton" [class.chooseButton]="userAnswers[idx].answer == ques.answers?.[1]?.answer"
+        [class.secondButton]="userAnswers[idx].answer != ques.answers?.[1]?.answer"
+        [disabled]="userAnswers[idx].answer == ques.answers?.[1]?.answer"
+        (click)="checkAnswer(ques.answers?.[1]?.isCorrect , idx ,ques.answers?.[1]?.answer ?? '')">{{
+        ques.answers?.[1]?.answer }}</button>
+      <button [class.chooseButton]="userAnswers[idx].answer == ques.answers?.[2]?.answer"
+        [class.thideButton]="userAnswers[idx].answer != ques.answers?.[2]?.answer"
+        [disabled]="userAnswers[idx].answer == ques.answers?.[2]?.answer"
+        (click)="checkAnswer(ques.answers?.[2]?.isCorrect , idx,ques.answers?.[2]?.answer ?? '')">{{
+        ques.answers?.[2]?.answer
+        }}</button>
+      <button [class.chooseButton]="userAnswers[idx].answer == ques.answers?.[3]?.answer"
+        [class.fortdButton]="userAnswers[idx].answer != ques.answers?.[3]?.answer"
+        [disabled]="userAnswers[idx].answer == ques.answers?.[3]?.answer"
+        (click)="checkAnswer(ques.answers?.[3]?.isCorrect , idx ,ques.answers?.[3]?.answer ?? '')">{{
+        ques.answers?.[3]?.answer
+        }}</button>
+
+
+
+    </div>
+  </div>
+  }
+  <div class="card" [class.hidden]="questionList.length == 0">
+    <button class="button-answer" role="button" (click)="checkPoint(true)">Answer</button>
+    <button class="button-questionsave" role="button" (click)="handelSaveQuestionsToDatabase([])">Save Question</button>
+  </div>
+
+  <div class="card" [class.hidden]="!showPoint">
+    <p class="cookieHeading">Your Point : {{youPoint}}</p>
+    <button class="button-try" role="button" (click)="hendleOnTryAgian(true)">Try again</button>
+    <!-- <button class="button-save" role="button">Save Point</button> -->
+  </div>
+
+  <div class="card" [class.hidden]="!showWarning">
+    <p class="cookieHeading">Please answer all questions completely. </p>
+  </div>
+
+  <div class="card" [class.hidden]="!showInvalidApi">
+    <p class="cookieHeading">Please input API from
+      <a href="https://opentdb.com/">https://opentdb.com/</a>
+    </p>
+  </div>
+
+</div>
+<div>
+</div>

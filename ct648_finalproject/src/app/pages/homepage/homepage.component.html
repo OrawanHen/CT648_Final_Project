@@ -1,0 +1,38 @@
+<br />
+<div class="header">
+    <!-- <img [src]="userProfile.picture" alt="Profile Photo" class="profile-img" /> -->
+    <div class="text-content">
+        <h1>HELLO! , {{ userProfile.name }} </h1>
+        <h1>Welcome ! </h1>
+        <p>Let enjoy your journey with us 🐳</p>
+        <a class="button-save" href="/allgame" >All question</a>
+        <a class="button-save" href="/firstgame">Try your first question</a>
+        <a class="button-save" href="/newgame">Create your question</a>
+
+    </div>
+</div>
+<br />
+<div class="slider">
+    <div class="slide-track">
+        @for (ques of questionList ; track ques.correct_answer; ){
+        <div class="slide">
+            <p class="title">Question : {{ques.question}}</p>
+            <p class="answer">Answer : {{ques.correct_answer}}</p>
+        </div>
+        }
+    </div>
+</div>
+
+
+
+<!-- <div>Welcome, {{ userProfile.name }}</div>
+<div class="user-card">
+    <div class="profile-photo">
+      <img [src]="userProfile.picture" alt="Profile Photo" />
+    </div>
+    <div class="user-info">
+      <h2>{{ userProfile.given_name }} {{ userProfile.family_name }}</h2>
+      <p>{{ userProfile.email }}</p>
+      <p>ID: {{ userProfile.sub }}</p>
+    </div>
+  </div> -->

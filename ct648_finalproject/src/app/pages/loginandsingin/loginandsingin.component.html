@@ -1,0 +1,60 @@
+<div class="container" id="container" [class.right-panel-active]="isSignUpActive">
+  <div class="form-container sign-up-container">
+    <form action="#">
+      <h1>Create Account</h1>
+
+      <input type="text" placeholder="Username" #username />
+      <input type="email" placeholder="Email" #email />
+      <input type="password" placeholder="Password" #password />
+      <button type="button" (click)="handleSignUp(username.value,email.value, password.value)">Sign Up</button>
+      <p>OR</p>
+    <div id="g_id_onload" data-client_id="946133500077-qbeo2f3obrlsk0dtgt2j6fk5d129028s.apps.googleusercontent.com"
+      data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost:3000/api/login/gmail"
+      data-auto_select="false" data-itp_support="true" data-callback="handleCredentialResponse">
+
+    </div>
+
+    <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
+      data-size="large" data-logo_alignment="left">
+    </div>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="">
+      <h1>Sign in</h1>
+      <input type="email" placeholder="Email" #usernamesingin />
+      <input type="password" placeholder="Password" #passwordsingin />
+      <button type="button" (click)="handelSingIn(usernamesingin.value, passwordsingin.value)">Sign In</button>
+    
+      <p>OR</p>
+      <div id="g_id_onload" data-client_id="946133500077-qbeo2f3obrlsk0dtgt2j6fk5d129028s.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost:3000/api/login/gmail"
+        data-auto_select="false" data-itp_support="true" data-callback="handleCredentialResponse">
+  
+      </div>
+  
+      <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
+        data-size="large" data-logo_alignment="left">
+      </div>
+    </form>
+    
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Welcome Back!</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button class="ghost" id="signIn" (click)="toggleSignIn()">Sign In</button>
+
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Hello, Friend!</h1>
+        <p>Enter your personal details and start your journey with us</p>
+        <button class="ghost" id="signUp" (click)="toggleSignUp()">Sign Up</button>
+
+
+      </div>
+      
+    </div>
+  </div>
+</div>

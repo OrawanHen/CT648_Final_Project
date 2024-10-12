@@ -1,0 +1,36 @@
+CREATE TABLE quiz_questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(255) NOT NULL,
+    correct_answer VARCHAR(255) NOT NULL,
+    category VARCHAR(100),
+    difficulty VARCHAR(50),
+    type VARCHAR(50),
+    incorrect_answers JSON NOT NULL
+);
+
+INSERT INTO quiz_questions (question, correct_answer, category, difficulty, type, incorrect_answers)
+VALUES (
+    'Who won the 2018 Monaco Grand Prix?',
+    'Daniel Ricciardo',
+    'Sports',
+    'medium',
+    'multiple',
+    '["Sebastian Vettel", "Kimi Raikkonen", "Lewis Hamilton"]'
+);
+
+SELECT * FROM quiz_questions WHERE id = ?;
+
+{
+    "type": "multiple",
+    "difficulty": "medium",
+    "category": "Sports",
+    "question": "Who won the 2018 Monaco Grand Prix?",
+    "correct_answer": "Daniel Ricciardo",
+    "incorrect_answers": [
+        "Sebastian Vettel",
+        "Kimi Raikkonen",
+        "Lewis Hamilton"
+    ]
+}
+
+

@@ -1,0 +1,30 @@
+<nav class="navbar" role="navigation">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button class="navbar-toggler" aria-expanded="false" aria-controls="open-navbar1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="/">
+        <!-- <h4>Your<span>Logo</span></h4> -->
+        <img src="logo.png" alt="Profile Photo" class="profile-img" />
+      </a>
+    </div>
+
+    <div class="navbar-menu" id="open-navbar1">
+      <ul class="navbar-nav">
+        @for (category of categoriesMenu; track category) {
+        <li [class.active]="isSelected(category.name)" (click)="setActive(category.name)">
+          <a href="/{{category.link}}">{{category.name}}</a>
+        </li>
+        }
+        <li>
+          <a id="signout-button" (click)="handleSignOut()">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

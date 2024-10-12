@@ -1,0 +1,52 @@
+<!-- <div class="container" id="container" [class.right-panel-active]="isSignUpActive">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Create Account</h1>
+
+            <input type="text" placeholder="Username" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="">
+            <h1>Sign in</h1>
+            <input type="email" placeholder="Email" #username />
+            <input type="password" placeholder="Password" #password />
+            <button type="button" (click)="handelSingIn(username.value, password.value)">Sign In</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn" (click)="toggleSignIn()">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start your journey with us</p>
+                <button class="ghost" id="signUp" (click)="toggleSignUp()">Sign Up</button>
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="card">
+    <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+
+        <i class="checkmark" [style.display]="data.status === true ? '' : 'none'">✓</i>
+        <i class="cancelmark" [style.display]="data.status === false ? '' : 'none'">&#x2718;</i>
+      
+    </div>
+
+    <h1 [style.color]="data.status === true ? '#10EE10' : '#ee1010'">
+        {{ data.message }}
+    </h1>
+
+
+
+</div>

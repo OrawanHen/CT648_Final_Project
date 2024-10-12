@@ -1,0 +1,26 @@
+<div class="table-container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>User Email</th>
+                <th>Game ID</th>
+                <th>Points</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (point of pointState ; track point ; let i = $index){
+            <tr>
+                <td>{{i +1}}</td>
+                <td>{{point.useremail}}</td>
+                <td>{{point.gamename}}</td>
+                <td>{{point.gamepoint}}</td>
+                <td>{{formattedTimestamp(point.time)}}</td>
+            </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
