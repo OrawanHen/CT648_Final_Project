@@ -15,7 +15,7 @@
 * sudo apt install docker.io
 * sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
 <br>
-> _optional for check  docker-compose version_
+> optional for check  docker-compose version
 > * docker-compose --version
 
 
