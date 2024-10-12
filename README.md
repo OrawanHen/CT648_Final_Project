@@ -20,7 +20,7 @@ Using port .
 * sudo apt update
 * sudo apt install docker.io
 * sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose 
-<br>
+
 > optional for check  docker-compose version
 > * docker-compose --version
 
@@ -45,9 +45,7 @@ export const environment = {
 
 ## Step for run docker-compose
 > * sudo docker-compose up
-<br>
-<br>
-> ... <br>
+> ... 
 > angular-app-1  |   ➜  Local:   http://localhost:4200/ <br>
 > angular-app-1  |   ➜  Network: http://172.18.0.2:4200/
 
