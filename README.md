@@ -45,8 +45,9 @@ export const environment = {
 
 ## Step for run docker-compose
 > * sudo docker-compose up
+> 
 > ... 
-> angular-app-1  |   ➜  Local:   http://localhost:4200/ <br>
+> angular-app-1  |   ➜  Local:   http://localhost:4200/
 > angular-app-1  |   ➜  Network: http://172.18.0.2:4200/
 
 
