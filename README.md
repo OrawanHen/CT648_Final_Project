@@ -1,4 +1,10 @@
 # How to start with ct648_finalproject
+```
+Using port .
+- 5432 > SQLPostgase
+- 3000 > API
+- 80 > Website
+```
 ### Please run following command
 
 ## Step for pull code form gitHub
@@ -38,7 +44,12 @@ export const environment = {
 ```
 
 ## Step for run docker-compose
-* sudo docker-compose up
+> * sudo docker-compose up
+<br>
+<br>
+> ... <br>
+> angular-app-1  |   ➜  Local:   http://localhost:4200/ <br>
+> angular-app-1  |   ➜  Network: http://172.18.0.2:4200/
 
 
 # SUMMARY ALL STEP
@@ -56,14 +67,13 @@ export const environment = {
 >     apiUrl: 'http://13.212.13.91:3000'
 >   };
 > ```
-> 9. sudo docker-compose up
+> 9. sudo docker-compose up 
 
 
 ##
-Thank you and have a grate day.
 
-BR
-
+Thank you and have a grate day. <br>
+BR <br>
 Orawan Hensirisak 666130226
 
 
