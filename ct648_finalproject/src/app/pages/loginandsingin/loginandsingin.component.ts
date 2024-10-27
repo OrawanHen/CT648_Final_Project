@@ -37,12 +37,11 @@ export class LoginandsinginComponent implements OnInit {
     private dialog: MatDialog,
   ) { }
   ngOnInit(): void {
- 
+
   }
 
   handelSingIn(username: string, password: string) {
-    console.log('username', username)
-    console.log('password', password)
+
     const url = `${environment.apiUrl}/api/quiz_login/quiz_login?username=${username}&password=${btoa(password)}`;
     this.http.get<loginState[]>(url)
       .subscribe({
@@ -65,15 +64,28 @@ export class LoginandsinginComponent implements OnInit {
       email: email,
       password: btoa(password)
     };
+    const response = {
+      email: email,
+      id: 0,
+      password: btoa(password),
+      username: username
+    };
 
     this.http.post(`${environment.apiUrl}/api/singupuser`, userData)
       .subscribe(response => {
         console.log('User signed up successfully:', response);
+
       }, error => {
         console.error('Error during sign up:', error);
         console.error('Error details:', error.error.text);
         if (error.error.text === "user name saved successfully") {
           this.showPopup('createnew')
+          sessionStorage.setItem("loggedInUser", JSON.stringify(response));
+
+        }
+        if (error.error.text === "The username is already taken") {
+          this.showPopup('usernametaken')
+
         }
       });
   }
@@ -108,11 +120,18 @@ export class LoginandsinginComponent implements OnInit {
           status: true
         },
       }),
-      localStorage.setItem('selectedCategory', 'Home');
+        localStorage.setItem('selectedCategory', 'Home');
       setTimeout(() => {
         this.dialog.closeAll();
         window.location.href = '/homepage';
       }, 2000);
+    } else if (isSuccess === "usernametaken") {
+      this.dialog.open(PopupDialogComponent, {
+        data: {
+          message: 'The username is already taken!',
+          status: false
+        },
+      })
     }
     // setTimeout(() => {
     //   this.dialog.closeAll();
