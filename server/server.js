@@ -19,13 +19,13 @@ const pool = new Pool({
 
 // Example route to check current date/time from the database
 app.get('/time', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT now()');
-    res.json(result.rows[0]);
-  } catch (err) {
-    console.error('Database query error:', err);
-    res.status(500).send('Error fetching current time from database');
-  }
+    try {
+        const result = await pool.query('SELECT now()');
+        res.json(result.rows[0]);
+    } catch (err) {
+        console.error('Database query error:', err);
+        res.status(500).send('Error fetching current time from database');
+    }
 });
 
 app.get('/api/:tableName', async (req, res) => {
@@ -52,9 +52,9 @@ app.get('/api/:tableName', async (req, res) => {
 app.get('/api/get/historypoint', async (req, res) => {
     const client = await pool.connect();
     try {
-            const result = await client.query(`SELECT * FROM quiz_history`);
-            return res.json(result.rows);
-   
+        const result = await client.query(`SELECT * FROM quiz_history`);
+        return res.json(result.rows);
+
     } catch (err) {
         console.error('Query error', err.stack);
         res.status(500).send('Internal Server Error');
@@ -127,12 +127,24 @@ app.post('/api/singupuser', async (req, res) => {
     const client = await pool.connect();
     const userState = req.body;
     try {
-        // Insert into the quiz_title table using PostgreSQL's parameterized queries
-        const result = await client.query(
-            'INSERT INTO quiz_login (username , password , email) VALUES ($1 ,$2 , $3) ',
-            [userState.username, userState.password, userState.email]
-        );
-        return res.status(201).send('user name saved successfully');
+        const checkResulu = await client.query(
+            'select * from quiz_login where username = $1',
+            [userState.username]
+        )
+        if (checkResulu.rowCount > 0) {
+            return res.status(201).send('The username is already taken');
+
+        } else {
+            // Insert into the quiz_title table using PostgreSQL's parameterized queries
+            const result = await client.query(
+                'INSERT INTO quiz_login (username , password , email) VALUES ($1 ,$2 , $3) ',
+                [userState.username, userState.password, userState.email]
+            );
+            // console.log('result',result)
+            return res.status(201).send('user name saved successfully');
+        }
+
+
     } catch (err) {
         console.error('Error inserting into database:', err);
         return res.status(500).send('Error inserting data');
@@ -202,5 +214,5 @@ app.delete('/api/deletequestion/:id', async (req, res) => {
 });
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
