@@ -4,7 +4,7 @@ services:
     build:
       context: ./ct648_finalproject
     ports:
-      - "80:4200"  # Map port 80 (Nginx) to port 4200 on the host
+      - "80:80"  # Map port 80 (Nginx) to port 4200 on the host
     restart: always
 
   server:
