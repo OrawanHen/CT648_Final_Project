@@ -74,6 +74,6 @@ export const environment = {
 
 Thank you and have a grate day. <br>
 BR <br>
-Orawan Hensirisak 666130226
+Orawan Hensirisak 66130226
 
 
