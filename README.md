@@ -8,29 +8,34 @@ page for multiple chice game for awswer question that get form Outsite API.
 
 
 ## Homepage
-![image](https://github.com/user-attachments/assets/18d60a6e-932d-467d-8ed7-496b0653b4f0)
+![image](https://github.com/user-attachments/assets/74a6474a-c456-4daa-8abc-589e6e26cdb6)
+
 
 
 ## New Game Page 
 - Place API and CHECK will get api to show as question 
 - Can "Save Question" then your question will show in all game and can play that game again.
-![image](https://github.com/user-attachments/assets/a347903f-072a-4f1a-b15b-90354d55a982)
+![image](https://github.com/user-attachments/assets/a3c94b6e-9b33-49b7-a1cc-ef1c203071a4)
+
 
 
 # All Game Page 
 - After "Save Question" 
-![image](https://github.com/user-attachments/assets/c5e4fbc4-005e-4acd-a6d4-45ca06add2a2)
+![image](https://github.com/user-attachments/assets/fe6debfe-bb2e-402f-a123-cbfa77a1cfb8)
+
 
 
 # Game play
 - If "Save Point" , your point will show in Game History Point Page
-![image](https://github.com/user-attachments/assets/069d8358-4eca-4b4d-9c9f-d83ae25b3196)
+![image](https://github.com/user-attachments/assets/ab523fcd-de7c-4905-bd15-2f11d7797496)
+
 
 ![image](https://github.com/user-attachments/assets/3f92c68d-ba8e-45ab-869f-72f3d4d1d5d1)
 
 
 # Game History Point Page
-![image](https://github.com/user-attachments/assets/99dc99a5-428c-452d-abf9-48ff27d1f3e5)
+![image](https://github.com/user-attachments/assets/f85aec2f-f7d1-4208-a4f3-5110118837ff)
+
 
 # How to start with ct648_finalproject
 ```
