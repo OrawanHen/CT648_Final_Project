@@ -125,6 +125,9 @@ services:
 volumes:
   postgres-data:
 ```
+angular-app :An Angular app that serves as the user-facing part of the quiz game.
+server:A server application responsible for handling user interactions and connecting with the database.
+db: A data storage system for user login information and quiz questions, ensuring smooth and secure access.
 
 # init.sql for create table
 ```
@@ -164,10 +167,10 @@ CREATE TABLE IF NOT EXISTS public.quiz_title
 );
 ```
 new table 
-quiz_history > for kepp history point 
-quiz_login > for keep user login
-quiz_questions > for keep question 
-quiz_questions > for keep question title
+- quiz_history > for kepp history point 
+- quiz_login > for keep user login
+- quiz_questions > for keep question 
+- quiz_questions > for keep question title
 
 
 # SUMMARY ALL STEP
