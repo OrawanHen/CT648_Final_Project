@@ -23,26 +23,12 @@ COPY . .
 # Build the Angular app for production
 RUN bun run build -- --configuration production
 
-# Check the contents of the dist directory
-RUN ls -R /app/dist/ct648_finalproject
-
 # Use a lightweight server for serving the Angular app
 FROM nginx:alpine
 
-# Ensure the html directory exists
-RUN mkdir -p /usr/share/nginx/html
-
-# Check the contents of the NGINX HTML directory
-RUN ls -R /usr/share/nginx/html
-
 # Copy the built files from the builder stage to the NGINX HTML directory
-# COPY --from=builder /app/dist/ct648_finalproject/. /usr/share/nginx/html/
 COPY --from=builder /app/dist/ct648_finalproject/browser/. /usr/share/nginx/html/
-
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Final check to verify files copied correctly
-RUN ls -R /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
