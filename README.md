@@ -36,6 +36,9 @@ page for multiple chice game for awswer question that get form Outsite API.
 # Game History Point Page
 ![image](https://github.com/user-attachments/assets/f85aec2f-f7d1-4208-a4f3-5110118837ff)
 
+# Game Diagram
+![Diagram](https://github.com/user-attachments/assets/1977b4c7-3a3b-4fbe-815c-3068fabe3a17)
+
 
 # How to start with ct648_finalproject
 ```
