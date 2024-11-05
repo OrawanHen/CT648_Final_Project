@@ -6,16 +6,18 @@ import {
   sequence,
   style,
   ɵPRE_STYLE
-} from "./chunk-3VCFAUMM.js";
-import "./chunk-DTBUXPHJ.js";
+} from "./chunk-SDKV3GQE.js";
+import "./chunk-XDCPATLV.js";
 import {
   Injectable,
   RuntimeError,
-  __objRest,
-  __spreadValues,
   setClassMetadata,
   ɵɵdefineInjectable
-} from "./chunk-BEP5Y4N7.js";
+} from "./chunk-I52G4DG7.js";
+import {
+  __objRest,
+  __spreadValues
+} from "./chunk-2CVCC5YH.js";
 
 // node_modules/@angular/animations/fesm2022/browser.mjs
 var LINE_START = "\n - ";
@@ -4017,9 +4019,9 @@ export {
 
 @angular/animations/fesm2022/browser.mjs:
   (**
-   * @license Angular v18.2.7
+   * @license Angular v18.2.10
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 */
-//# sourceMappingURL=browser-PENGNU7I.js.map
+//# sourceMappingURL=browser-3EVRH4W3.js.map

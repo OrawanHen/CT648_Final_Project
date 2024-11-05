@@ -14,8 +14,8 @@ const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'ct468_finalproject',
-    password: 'P@ssw0rd',
-    // password: '12345678',
+    // password: 'P@ssw0rd',
+    password: '12345678',
     port: 5432,
 });
 
@@ -145,8 +145,8 @@ app.post('/api/gamepoint', async (req, res) => {
     try {
         // Insert into the quiz_title table using PostgreSQL's parameterized queries
         const result = await client.query(
-            'INSERT INTO quiz_history (gamepoint , useremail , gamename) VALUES ($1 ,$2 , $3) ',
-            [userState.gamepoint, userState.useremail, userState.gamename]
+            'INSERT INTO quiz_history (gamepoint , useremail , gamename , time) VALUES ($1 ,$2 , $3 , $4) ',
+            [userState.gamepoint, userState.useremail, userState.gamename , "now()"]
         );
         // return res.status(201).send('user name saved successfully');
         res.status(201).json({

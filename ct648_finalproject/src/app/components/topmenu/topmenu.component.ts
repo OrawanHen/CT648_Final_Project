@@ -30,6 +30,7 @@ export class TopmenuComponent implements OnInit {
     { name: 'New Game', link: 'newgame' },
     { name: 'First Game', link: 'firstgame' },
     { name: 'Game History Point', link: 'gamehistorypoint' },
+    { name: 'About', link: 'about' },
     // { name: 'Signout', link: 'quiz_login' }
   ];
   selected: string | null = null;

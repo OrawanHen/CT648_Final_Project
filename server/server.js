@@ -9,14 +9,21 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 // Configure PostgreSQL connection pool
+// const pool = new Pool({
+//   user: 'your_postgres_user',  // Update with your PostgreSQL user
+//   host: 'db',                   // Database service name in Docker Compose
+//   database: 'your_database_name', // Update with your database name
+//   password: 'your_password',    // Update with your password
+//   port: 5432,                   // Default PostgreSQL port
+// });
 const pool = new Pool({
-  user: 'your_postgres_user',  // Update with your PostgreSQL user
-  host: 'db',                   // Database service name in Docker Compose
-  database: 'your_database_name', // Update with your database name
-  password: 'your_password',    // Update with your password
-  port: 5432,                   // Default PostgreSQL port
+    user: 'postgres',
+    host: 'localhost',
+    database: 'ct468_finalproject',
+    // password: 'P@ssw0rd',
+    password: '12345678',
+    port: 5432,
 });
-
 // Example route to check current date/time from the database
 app.get('/time', async (req, res) => {
     try {
@@ -160,12 +167,13 @@ app.post('/api/gamepoint', async (req, res) => {
     try {
         // Insert into the quiz_title table using PostgreSQL's parameterized queries
         const result = await client.query(
-            'INSERT INTO quiz_history (gamepoint , useremail , gamename) VALUES ($1 ,$2 , $3) ',
-            [userState.gamepoint, userState.useremail, userState.gamename]
+            'INSERT INTO quiz_history (gamepoint , useremail , gamename , time) VALUES ($1 ,$2 , $3 , $4) ',
+            [userState.gamepoint, userState.useremail, userState.gamename , "now()"]
         );
         // return res.status(201).send('user name saved successfully');
         res.status(201).json({
             message: 'user name saved successfully',
+            result : result
         });
     } catch (err) {
         console.error('Error inserting into database:', err);
