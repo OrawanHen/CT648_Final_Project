@@ -192,8 +192,8 @@ new table
 
 
 ##
-The project is part of coursework for CT648 Web and Cloud Engineering at Dhurakij Pundit University.
-Consultant : Assist.Prof.Dr.Chaiyaporn Khemapatpapan,Ph.D
+The project is part of coursework for CT648 Web and Cloud Engineering at Dhurakij Pundit University. <br/>
+Consultant : Assist.Prof.Dr.Chaiyaporn Khemapatpapan,Ph.D <br/>
 Thank you and have a grate day. <br>
 BR <br>
 Orawan Hensirisak 666130226
