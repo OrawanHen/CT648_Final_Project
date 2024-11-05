@@ -4,7 +4,8 @@ Outsite API : https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&
 page for multiple chice game for awswer question that get form Outsite API.
 
 # How to get api from https://opentdb.com
-![alt text](image-1.png)
+![image](https://github.com/user-attachments/assets/b9dbe6df-631f-4f6e-8471-193fd7f66d44)
+
 
 ## Homepage
 ![alt text](image.png)
