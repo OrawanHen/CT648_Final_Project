@@ -1,4 +1,4 @@
-# Qusetion Game
+# Question Game
 Outsite API : https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple
 
 page for multiple chice game for awswer question that get form Outsite API.
