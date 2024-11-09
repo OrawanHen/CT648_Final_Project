@@ -18,8 +18,8 @@ app.use(express.json());
 // });
 const pool = new Pool({
     user: 'postgres',
-    host: 'localhost',
-    database: 'ct468_finalproject',
+    host: 'db',
+    database: 'questiongame',
     // password: 'P@ssw0rd',
     password: '12345678',
     port: 5432,
