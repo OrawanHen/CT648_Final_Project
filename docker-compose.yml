@@ -2,7 +2,7 @@
 services:
   angular-app:
     build:
-      context: ./ct648_finalproject
+      context: ./questionGame
     ports:
       - "80:80"  # Map port 80 (Nginx) to port 4200 on the host
     restart: always
