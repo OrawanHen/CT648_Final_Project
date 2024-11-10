@@ -5,7 +5,13 @@ page for multiple chice game for awswer question that get form Outsite API.
 
 # How to get api from https://opentdb.com
 ![image](https://github.com/user-attachments/assets/b9dbe6df-631f-4f6e-8471-193fd7f66d44)
-
+Go to Open Trivia Database (opentdb.com) for get API
+- 1. Enter the desired value.
+- 2. Click "Generate API URL".
+- 3. Copy the API URL shown under "API URL Generated!".
+- 4. Paste the copied API URL into the "input API" field on the New Game Page.
+- 5. Click "Check"
+- 6. The question game will appear, and you can enjoy playing!
 
 ## Homepage
 ![image](https://github.com/user-attachments/assets/74a6474a-c456-4daa-8abc-589e6e26cdb6)
@@ -35,6 +41,15 @@ page for multiple chice game for awswer question that get form Outsite API.
 
 # Game History Point Page
 ![image](https://github.com/user-attachments/assets/f85aec2f-f7d1-4208-a4f3-5110118837ff)
+
+# Thing you need to know After check "Answer" button.
+![needtoknow](https://github.com/user-attachments/assets/79280ffa-2740-485b-b1b1-0159113bf7a5)
+
+- 1. Correct Answer: This means your answer is correct. 
+- 2. Incorrect Answer: This means your answer is wrong.
+- 3. Try Again: This means you need to try answering the question again.
+
+
 
 # Game Diagram
 ![Diagram](https://github.com/user-attachments/assets/1977b4c7-3a3b-4fbe-815c-3068fabe3a17)
