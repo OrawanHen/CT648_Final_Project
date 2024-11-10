@@ -30,7 +30,7 @@ export class AllGameComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.http.get<titleObject[]>(`${environment.apiUrl}/api/quiz_title`)
+    this.http.get<titleObject[]>(`${environment.apiUrl}/api/oh_quiz_title`)
       .subscribe(response => {
         this.titleList = response
       })
@@ -62,7 +62,7 @@ export class AllGameComponent implements OnInit {
       .subscribe(response => {
         console.log('response', response.message)
         if (response.message === "Record deleted successfully") {
-          this.http.get<titleObject[]>(`${environment.apiUrl}/api/quiz_title`)
+          this.http.get<titleObject[]>(`${environment.apiUrl}/api/oh_quiz_title`)
             .subscribe(response => {
               this.titleList = response
 

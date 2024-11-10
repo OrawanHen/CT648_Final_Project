@@ -1,6 +1,54 @@
 .card {
   width: 300px;
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
+  border-radius: 8px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px 20px 20px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  margin: 20px 30px 20px 20px;
+}
+
+.cardred {
+  width: 300px;
+  background-color: red;
+  border-radius: 8px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px 20px 20px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  margin: 20px 30px 20px 20px;
+}
+
+.cardgreen {
+  width: 300px;
+  background-color: lightseagreen;
+  border-radius: 8px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px 20px 20px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  margin: 20px 30px 20px 20px;
+}
+
+.cardblue {
+  width: 300px;
+  background-color: blueviolet;
   border-radius: 8px;
   display: inline-block;
   flex-direction: column;
@@ -67,12 +115,12 @@
 
 .firstButton {
   width: 100%;
-  height: auto; 
-  min-height: 30px; 
-  background-color: #7b57ff;
+  height: auto;
+  min-height: 30px;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -82,12 +130,12 @@
 
 .secondButton {
   width: 100%;
-  height: auto; 
-  min-height: 30px; 
-  background-color: #ffcd57;
+  height: auto;
+  min-height: 30px;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -97,12 +145,12 @@
 
 .thideButton {
   width: 100%;
-  height: auto; 
-  min-height: 30px; 
-  background-color: #ff5765;
+  height: auto;
+  min-height: 30px;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -112,12 +160,12 @@
 
 .fortdButton {
   width: 100%;
-  height: auto; 
-  min-height: 30px; 
-  background-color: #9173ff;
+  height: auto;
+  min-height: 30px;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -127,9 +175,9 @@
 
 .chooseButton {
   width: 100%;
-  height: auto; 
-  min-height: 30px; 
-  background-color: #d8d7d9;
+  height: auto;
+  min-height: 30px;
+  background-color: yellow;
   transition-duration: .2s;
   border: none;
   /* color: rgb(241, 241, 241); */
@@ -140,7 +188,7 @@
   box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
   transition: all .6s ease;
   cursor: not-allowed;
-}
+} 
 
 .firstButton:hover,
 .secondButton:hover,

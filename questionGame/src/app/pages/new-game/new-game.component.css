@@ -84,7 +84,55 @@ body {
 
 .card {
   width: 300px;
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
+  border-radius: 8px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px 20px 20px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  margin: 20px 30px 20px 20px;
+}
+
+.cardred {
+  width: 300px;
+  background-color: red;
+  border-radius: 8px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px 20px 20px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  margin: 20px 30px 20px 20px;
+}
+
+.cardgreen {
+  width: 300px;
+  background-color: lightseagreen;
+  border-radius: 8px;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px 20px 20px;
+  gap: 13px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+  margin: 20px 30px 20px 20px;
+}
+
+.cardblue {
+  width: 300px;
+  background-color: blueviolet;
   border-radius: 8px;
   display: inline-block;
   flex-direction: column;
@@ -153,10 +201,10 @@ body {
   width: 100%;
   height: auto;
   min-height: 30px;
-  background-color: #7b57ff;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -168,10 +216,10 @@ body {
   width: 100%;
   height: auto;
   min-height: 30px;
-  background-color: #ffcd57;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -183,10 +231,10 @@ body {
   width: 100%;
   height: auto;
   min-height: 30px;
-  background-color: #ff5765;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -198,10 +246,10 @@ body {
   width: 100%;
   height: auto;
   min-height: 30px;
-  background-color: #9173ff;
+  background-color: #ffffff;
   transition-duration: .2s;
   border: none;
-  color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 600;
   border-radius: 20px;
@@ -213,7 +261,7 @@ body {
   width: 100%;
   height: auto;
   min-height: 30px;
-  background-color: #d8d7d9;
+  background-color: yellow;
   transition-duration: .2s;
   border: none;
   /* color: rgb(241, 241, 241); */

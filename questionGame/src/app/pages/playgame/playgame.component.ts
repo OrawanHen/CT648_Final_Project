@@ -22,6 +22,8 @@ interface titleObject {
 interface UserAnswer {
   isCorrect: boolean;
   answer: string;
+  isTryAgain: boolean;
+
 }
 @Component({
   selector: 'app-playgame',
@@ -37,6 +39,7 @@ export class PlaygameComponent implements OnInit {
   userAnswers: UserAnswer[] = [];
   showPoint: boolean = false;
   showWarning: boolean = false;
+  showColorChang: boolean = true;
   youPoint: number = 0;
   userProfile: any;
 
@@ -66,7 +69,7 @@ export class PlaygameComponent implements OnInit {
             answers: this.shuffleAnswers(q.correct_answer, q.incorrect_answers || [])
 
           }));
-          this.userAnswers = new Array(this.titleList.length).fill(null).map(() => ({ isCorrect: false, answer: '' }));
+          this.userAnswers = new Array(this.titleList.length).fill(null).map(() => ({ isCorrect: false, answer: '' , isTryAgain: false}));
 
         },
         error => {
@@ -104,8 +107,16 @@ export class PlaygameComponent implements OnInit {
     const answerIsCorrect = isCorrect ?? false;
     this.userAnswers[questionno] = {
       isCorrect: answerIsCorrect,
-      answer: answer
+      answer: answer,
+      isTryAgain: false,
     };
+    if (this.showColorChang === false) {
+      this.userAnswers[questionno] = {
+        isCorrect: answerIsCorrect,
+        answer: answer,
+        isTryAgain: true
+      };
+    }
 
   }
   checkPoint(showpoint: boolean): void {
@@ -114,14 +125,17 @@ export class PlaygameComponent implements OnInit {
       this.youPoint = this.userAnswers.filter(item => item.isCorrect === true).length;
       this.showPoint = true;
       this.showWarning = false;
-
+      this.showColorChang = false;
+      Object.keys(this.userAnswers).forEach((key : any) => {
+        this.userAnswers[key].isTryAgain = false;
+      });
     } else {
       this.showWarning = true;
     }
   }
 
   hendleOnTryAgian(tryagain: boolean): void {
-    this.userAnswers = new Array(this.titleList.length).fill(null).map(() => ({ isCorrect: false, answer: '' }));
+    this.userAnswers = new Array(this.titleList.length).fill(null).map(() => ({ isCorrect: false, answer: '' , isTryAgain: false}));
     this.showPoint = false;
     this.showWarning = false;
   }

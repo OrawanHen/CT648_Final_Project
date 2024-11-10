@@ -17,6 +17,8 @@ interface QuestionState {
 interface UserAnswer {
   isCorrect: boolean;
   answer: string;
+  isTryAgain: boolean;
+
 }
 
 interface SaveQuestionsResponse {
@@ -38,6 +40,7 @@ export class NewGameComponent implements OnInit {
   showWarning: boolean = false;
   showInvalidApi: boolean = false;
   loading: boolean = false;
+  showColorChang: boolean = true;
   youPoint: number = 0;
   constructor(private http: HttpClient,
     private dialog: MatDialog
@@ -76,8 +79,17 @@ export class NewGameComponent implements OnInit {
     const answerIsCorrect = isCorrect ?? false;
     this.userAnswers[questionno] = {
       isCorrect: answerIsCorrect,
-      answer: answer
+      answer: answer,
+      isTryAgain: false
+
     };
+    if (this.showColorChang === false) {
+      this.userAnswers[questionno] = {
+        isCorrect: answerIsCorrect,
+        answer: answer,
+        isTryAgain: true
+      };
+    }
     console.log(this.userAnswers)
 
   }
@@ -88,6 +100,10 @@ export class NewGameComponent implements OnInit {
       this.youPoint = this.userAnswers.filter(item => item.isCorrect === true).length;
       this.showPoint = true;
       this.showWarning = false;
+      this.showColorChang = false;
+      Object.keys(this.userAnswers).forEach((key : any) => {
+        this.userAnswers[key].isTryAgain = false;
+      });
 
     } else {
       this.showWarning = true;
@@ -95,7 +111,7 @@ export class NewGameComponent implements OnInit {
   }
 
   hendleOnTryAgian(tryagain: boolean): void {
-    this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' }));
+    this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' ,isTryAgain: false}));
     this.showPoint = false;
     this.showWarning = false;
   }
@@ -112,7 +128,7 @@ export class NewGameComponent implements OnInit {
 
         }));
         // this.userAnswers = new Array(this.questionList.length).fill(undefined);
-        this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' }));
+        this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' ,isTryAgain: false}));
         this.loading = false;
         this.showInvalidApi = false;
 

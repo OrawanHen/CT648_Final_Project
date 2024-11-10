@@ -23,7 +23,12 @@
 
 <div class="containquestion ">
   @for (ques of questionList ; track ques.question; let idx = $index){
-  <div class="card">
+  <div 
+  [class.card]="showColorChang" 
+    [class.cardgreen]="userAnswers[idx].isCorrect && !showColorChang"
+    [class.cardred]="!userAnswers[idx].isCorrect && !showColorChang"
+    [class.cardblue]="userAnswers[idx].isTryAgain"
+  >
     <p class="cookieHeading">{{ ques.question }}</p>
     <div class="buttonContainer">
       <button [class.chooseButton]="userAnswers[idx].answer == ques.answers?.[0]?.answer"

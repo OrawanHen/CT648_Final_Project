@@ -13,6 +13,7 @@ interface QuestionState {
 interface UserAnswer {
   isCorrect: boolean;
   answer: string;
+  isTryAgain: boolean;
 }
 
 @Component({
@@ -27,6 +28,7 @@ export class FirstgameComponent implements OnInit {
   userAnswers: UserAnswer[] = [];
   showPoint: boolean = false;
   showWarning: boolean = false;
+  showColorChang: boolean = true;
   youPoint: number = 0;
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class FirstgameComponent implements OnInit {
 
         }));
         // this.userAnswers = new Array(this.questionList.length).fill(undefined);
-        this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' }));
+        this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '', isTryAgain: false }));
 
       })
   }
@@ -68,18 +70,31 @@ export class FirstgameComponent implements OnInit {
     const answerIsCorrect = isCorrect ?? false;
     this.userAnswers[questionno] = {
       isCorrect: answerIsCorrect,
-      answer: answer
+      answer: answer,
+      isTryAgain: false
     };
+    if (this.showColorChang === false) {
+      this.userAnswers[questionno] = {
+        isCorrect: answerIsCorrect,
+        answer: answer,
+        isTryAgain: true
+      };
+    }
     console.log(this.userAnswers)
 
   }
 
-  checkPoint(showpoint: boolean): void {
+  checkPoint(showpoint: boolean ): void {
     const isAllAnswer = this.userAnswers.filter(item => item.answer === '')
     if (isAllAnswer.length === 0) {
       this.youPoint = this.userAnswers.filter(item => item.isCorrect === true).length;
       this.showPoint = true;
       this.showWarning = false;
+      this.showColorChang = false;
+      Object.keys(this.userAnswers).forEach((key : any) => {
+        this.userAnswers[key].isTryAgain = false;
+      });
+      
 
     } else {
       this.showWarning = true;
@@ -87,9 +102,10 @@ export class FirstgameComponent implements OnInit {
   }
 
   hendleOnTryAgian(tryagain: boolean): void {
-    this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' }));
+    this.userAnswers = new Array(this.questionList.length).fill(null).map(() => ({ isCorrect: false, answer: '' ,isTryAgain : false}));
     this.showPoint = false;
     this.showWarning = false;
+    this.showColorChang = true;
   }
 
 }
