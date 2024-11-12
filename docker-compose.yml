@@ -21,7 +21,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345678
-      POSTGRES_DB: questiongame
+      POSTGRES_DB: ct648
     ports:
       - "5432:5432"
     volumes:
