@@ -58,9 +58,9 @@ export class PlaygameComponent implements OnInit {
 
     // Fetch the title list
     this.http.get<titleObject[]>(
-      `${environment.apiUrl}/api/quiz_title?query=SELECT * FROM public.quiz_questions 
-      left join public.quiz_title on public.quiz_title.id = public.quiz_questions.title_id 
-      where public.quiz_questions.title_id = ${this.gameId}`)
+      `${environment.apiUrl}/api/quiz_title?query=SELECT * FROM public.oh_quiz_questions 
+      left join public.oh_quiz_title on public.oh_quiz_title.id = public.oh_quiz_questions.title_id 
+      where public.oh_quiz_questions.title_id = ${this.gameId}`)
       .subscribe(
         response => {
           this.titleList = response.map(q => ({
