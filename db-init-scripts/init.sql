@@ -34,5 +34,5 @@ CREATE TABLE IF NOT EXISTS public.oh_quiz_title
 );
 
 INSERT INTO public.oh_quiz_login (username, password, email)
-VALUES ('AdminTest', '1234', 'Admin@example.com');
+VALUES ('admin', 'YWRtaW4=', 'Admin@gmail.com');
 
