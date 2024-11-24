@@ -130,9 +130,9 @@ services:
   db:
     image: postgres:13-alpine
     environment:
-      POSTGRES_USER: your_postgres_user
-      POSTGRES_PASSWORD: your_password
-      POSTGRES_DB: your_database_name
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: ct648
     ports:
       - "5432:5432"
     volumes:
@@ -149,7 +149,7 @@ volumes:
 
 # init.sql for create table
 ```
-CREATE TABLE IF NOT EXISTS public.quiz_history
+CREATE TABLE IF NOT EXISTS public.oh_quiz_history
 (
     gamepoint text,
     useremail text,
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS public.quiz_history
     "time" timestamp with time zone  -- Stores time with time zone information
 );
 
-CREATE TABLE IF NOT EXISTS public.quiz_login
+CREATE TABLE IF NOT EXISTS public.oh_quiz_login
 (
     id SERIAL PRIMARY KEY,           -- Auto-incrementing primary key
     username text NOT NULL,          -- Username is required
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS public.quiz_login
     email text                       -- Optional email field
 );
 
-CREATE TABLE IF NOT EXISTS public.quiz_questions
+CREATE TABLE IF NOT EXISTS public.oh_quiz_questions
 (
     id SERIAL PRIMARY KEY,           -- Auto-incrementing primary key
     question text,
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS public.quiz_questions
     title_id integer                 -- Foreign key to quiz_title (if needed)
 );
 
-CREATE TABLE IF NOT EXISTS public.quiz_title
+CREATE TABLE IF NOT EXISTS public.oh_quiz_title
 (
     id SERIAL PRIMARY KEY,           -- Auto-incrementing primary key
     title text,
