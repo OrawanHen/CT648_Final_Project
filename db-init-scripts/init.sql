@@ -33,3 +33,6 @@ CREATE TABLE IF NOT EXISTS public.oh_quiz_title
     create_date timestamp without time zone  -- Stores time without time zone information
 );
 
+INSERT INTO public.oh_quiz_login (username, password, email)
+VALUES ('AdminTest', '1234', 'Admin@example.com');
+
