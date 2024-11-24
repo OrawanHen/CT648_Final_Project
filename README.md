@@ -1,7 +1,10 @@
 # Question Game
 Outsite API : https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple
-
 page for multiple chice game for awswer question that get form Outsite API.
+
+User for test
+Username : admin
+Password : admin
 
 # How to get api from https://opentdb.com
 ![image](https://github.com/user-attachments/assets/b9dbe6df-631f-4f6e-8471-193fd7f66d44)
